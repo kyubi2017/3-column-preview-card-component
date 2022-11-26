@@ -12,4 +12,4 @@
 - CSS grids
 - vite 
 
--live demo [click here]() 
+-live demo [click here](https://3-column-preview-card-component-psi-tawny.vercel.app/) 
