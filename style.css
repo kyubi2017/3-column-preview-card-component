@@ -1,0 +1,222 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
+}
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+
+:root {
+  --orange-clr: hsl(31, 77%, 52%);
+  --cyan-100: hsl(184, 100%, 22%);
+  --cyan-200: hsl(179, 100%, 13%);
+  --paragraphs-clr: hsla(0, 0%, 100%, 0.75);
+  --body-bg: hsl(0, 0%, 95%);
+  --Font-size: 15px;
+  --accent-font: "Big Shoulders Display", cursive;
+  --body-font: "Lexend Deca", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--body-font);
+  font-size: var(--Font-size);
+  background-color: var(--body-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--paragraphs-clr);
+  font-size: var(--Font-size);
+}
+
+.container {
+  width: 60vw;
+  height: 500px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.card-one {
+  background: var(--orange-clr);
+  border-radius: 10px 0 0 10px;
+}
+.card-two {
+  background: var(--cyan-100);
+}
+.card-three {
+  background: var(--cyan-200);
+  border-radius: 0 10px 10px 0;
+}
+
+.group-styles {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+.group-styles h2 {
+  font-family: var(--accent-font);
+  font-weight: 700;
+  color: var(--body-bg);
+  font-size: calc(var(--Font-size) * 2);
+}
+
+.group-styles p {
+  line-height: 1.5;
+  padding-bottom: 1.5rem;
+  font-size: calc(var(--Font-size) * 1.2);
+}
+
+.group-styles button {
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  background: var(--body-bg);
+  transition: all 0.3s ease-in-out;
+}
+
+.card-one button {
+  color: var(--orange-clr);
+}
+
+.card-two button {
+  color: var(--cyan-100);
+}
+
+.card-three button {
+  color: var(--cyan-200);
+}
+
+.card-one button:hover {
+  background: var(--orange-clr);
+  color: var(--body-bg);
+  border: solid white 1px;
+}
+
+.card-two button:hover {
+  background: var(--cyan-100);
+  color: var(--body-bg);
+  border: solid white 1px;
+}
+
+.card-three button:hover {
+  background: var(--cyan-200);
+  color: var(--body-bg);
+  border: solid white 1px;
+}
+
+/* media query */
+
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 90vw;
+  }
+  .card-one {
+    border-radius: 10px 10px 0 0;
+  }
+  .card-two {
+    border-radius: 0;
+  }
+  .card-three {
+    border-radius: 0 0 10px 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 90vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
+  .card-one {
+    border-radius: 10px 10px 0 0;
+  }
+  .card-two {
+    border-radius: 0;
+  }
+  .card-three {
+    border-radius: 0 0 10px 10px;
+  }
+  .group-styles h2 {
+    font-size: calc(var(--Font-size) * 1.5);
+  }
+  .group-styles p {
+    font-size: calc(var(--Font-size) * 1.2);
+  }
+}
